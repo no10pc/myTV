@@ -1,0 +1,40 @@
+{
+    "station":
+    [
+     {
+     "name": "TRT1 HD",
+     "streamURL": "http://trtcanlitv-lh.akamaihd.net/i/TRT1HD_1@181842/master.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/trt1.jpg",
+     "desc": "TRT1 HD",
+     "longDesc": "Türkiye ulusal Televizyonu"
+     },
+     {
+     "name": "ATV HD",
+     "streamURL": "http://trkvz-m.ercdn.net/trkvz-temp/atvhdm.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/atvhd.jpg",
+     "desc": "ATV HD",
+     "longDesc": "Turkuaz medya grubu ve sabah gazetesi televizyonu."
+     },
+     {
+     "name": "Kanal D",
+     "streamURL": "http://media.netd.com.tr/S2/HLS_LIVE/kanald/index.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/kanald.png",
+     "desc": "Kanal D",
+     "longDesc": "Doğan medya grubu televizyonu."
+     },
+     {
+     "name": "Show TV HD",
+     "streamURL": "http://mn-l.mncdn.com/showtv/showtv1/playlist.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/showtvhd.png",
+     "desc": "Show TV HD",
+     "longDesc": "The Turkish TV station is the beautiful of media owner, TR movie promoter, and industry."
+     },
+     {
+     "name": "Star TV",
+     "streamURL": "http://yayin5.canlitv.com:1935/live/startv/playlist.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/startv.png",
+     "desc": "Star TV",
+     "longDesc": "Ciner medya grubu televizyonu."
+     }
+    ]
+}

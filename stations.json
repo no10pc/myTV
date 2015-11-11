@@ -1,0 +1,257 @@
+{
+    "station":
+    [
+     {
+     "name": "TRT1 HD",
+     "streamURL": "http://trtcanlitv-lh.akamaihd.net/i/TRT1HD_1@181842/master.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/trt1.png",
+     "desc": "İYİ FİKİR...",
+     "longDesc": "Türkiye Radyo Televizyon Kurumu (kısaca TRT), Türkiye'nin kamu yayıncılığı yapmakla görevli tek kuruluşu. 1 Mayıs 1964 günü çıkan TRT yasasıyla kuruldu."
+     },
+     {
+     "name": "TRT HD",
+     "streamURL": "http://trtcanlitv-lh.akamaihd.net/i/TRTHD_1@182045/master.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/trthd.png",
+     "desc": "TRT HD",
+     "longDesc": "TRT HD, Türkiye Radyo Televizyon Kurumu tarafından kurulan ve yüksek tanımlamalı (1920*1080 yüksek resim çözünürlüğü ve 5.1 Çevresel Dolby Digital standartında yüksek kaliteli ses) yayın yapan televizyon kanalıdır."
+     },
+     {
+     "name": "ATV HD",
+     "streamURL": "http://trkvz-m.ercdn.net/trkvz-temp/atvhdm.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/atvhd.png",
+     "desc": "MÜGE ANLI İLE TATLI SERT...",
+     "longDesc": "Türkiye'de Turkuvaz Medya Grubu bünyesinde yayın yapan ulusal televizyon kanalıdır."
+     },
+     {
+     "name": "Kanal D",
+     "streamURL": "http://media.netd.com.tr/S2/HLS_LIVE/kanald/index.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/kanald.png",
+     "desc": "KISMETSE OLUR...",
+     "longDesc": "Kanal D, Aydın Doğan'ın sahibi olduğu Doğan Holding'in Türkiye'de yayın yapan ulusal televizyon kanallarından biridir."
+     },
+     {
+     "name": "Show TV HD",
+     "streamURL": "http://mn-l.mncdn.com/showtv/showtv1/playlist.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/showtvhd.png",
+     "desc": "EVRİM AKIN İLE EV KUŞU...",
+     "longDesc": "Show TV, Ciner Medya Grubu bünyesinde yayın yapan, Türkiye'nin en çok izlenen televizyon kanallarından biri."
+     },
+     {
+     "name": "Star TV",
+     "streamURL": "http://yayin5.canlitv.com:1935/live/startv/playlist.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/startv.png",
+     "desc": "KİRALIK AŞK...",
+     "longDesc": "Star TV, 1989 yılında Ahmet Özal ve Cem Uzan tarafından kurulan, Türkiye'nin ilk özel televizyon kanalı."
+     },
+     {
+     "name": "TV8",
+     "streamURL": "http://yayin6.canlitv.com:1935/live/tv8/playlist.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/tv8.png",
+     "desc": "ARAMIZDA KALMASIN...",
+     "longDesc": "TV8, 22 Şubat 1999 tarihinde MNG Medya Grubu bünyesinde yayına başlayan, 2013 yılından bu yana Acun Medya ve Doğuş Yayın Grubu ortalıklığında[2] yayın yapan bir televizyon kanalıdır."
+     },
+     {
+     "name": "AHABER HD",
+     "streamURL": "http://trkvz-m.ercdn.net/trkvz-temp/ahaberhdm.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/ahaberhd.png",
+     "desc": "BAŞBAKAN İLE GÜNDEM ÖZEL...",
+     "longDesc": "A Haber, Çalık Holding tarafından kurulmuş haber kanalı. Türkiye'nin ilk HD yayın yapan haber kanalıdır."
+     },
+     {
+     "name": "Kanal Türk",
+     "streamURL": "http://kanalturk-live.ercdn.com/kanalturk.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/kanalturk.png",
+     "desc": "İYİLİK SAĞLIK...",
+     "longDesc": "Kanaltürk, Türkçe içerikli, özel bir televizyon kanalıdır."
+     },
+     {
+     "name": "Number 1 TV",
+     "streamURL": "http://mn-l.mncdn.com/birnumaramedya_live/nr1tv.sdp/playlist.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/nr1.png",
+     "desc": "Number 1 TV",
+     "longDesc": "Number One TV, 1994 yılında yayın hayatına başladı. İlk yayın şu anda halen var olan Yenibosna'daki stüdyodan gerçekleştirildi. İlk zamanlarda küçük bir stüdyo ve kısıtlı bir kadro ile yola çıktı."
+     },
+     {
+     "name": "Sinema TV",
+     "streamURL": "http://origin.live.web.tv.streamprovider.net/streams/0fbf2b4871485d41c22604eef2a26646_live_0_0/index.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/sinematv.png",
+     "desc": "Sinema TV",
+     "longDesc": "Sinema TV, Temmuz 2008 tarihinde D-Smart platformunda yayına başlayan ve Oflaz Medya Grubu'na ait film kanalıdır."
+     },
+     {
+     "name": "ARD",
+     "streamURL": "http://daserste_live-lh.akamaihd.net/i/daserste_de@91204/master.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/ard.png",
+     "desc": "ARD",
+     "longDesc": "ARD, Almanya'da televizyon yayıncılığı yapan bir kanal. Kanalın tam adı Arbeitsgemeinschaft der öffentlich-rechtlichen Rundfunkanstalten der Bundesrepublik Deutschland"
+     },
+     {
+     "name": "ZDF",
+     "streamURL": "http://origin2.live.web.tv.streamprovider.net/streams/6a2e9dc6da13378896229b49470945d6/index.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/zdf.png",
+     "desc": "ZDF",
+     "longDesc": "Zweites Deutsches Fernsehen (İkinci Alman Televizyonu), ZDF, Mainz'a kurulmuş Alman kamu televizyon kanalıdır."
+     },
+     {
+     "name": "CNN Türk",
+     "streamURL": "http://media.netd.com.tr/S2/HLS_LIVE/cnn_turk/index.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/cnn.png",
+     "desc": "EKONOMİ...",
+     "longDesc": "CNN Türk, ABD'li CNN şirketi ve Doğan Grubu ortaklığı ile 11 Ekim 1999'da kurulan bir haber kanalı."
+     },
+     {
+     "name": "BLOOMBERG HT",
+     "streamURL": "http://mn-l.mncdn.com/bloomberght/bloomberght2/playlist.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/bloomberg.png",
+     "desc": "BLOOMBERG HT",
+     "longDesc": "Bloomberg HT, 27 Ocak 2010'da yayına başlamış bir ekonomi kanalı."
+     },
+	 {
+     "name": "24",
+     "streamURL": "http://mn-l.mncdn.com:1935/kanal24/kanal243/playlist.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/24.png",
+     "desc": "24",
+     "longDesc": "24 TV, Tevhit Karakaya'nın imtiyaz sahibi olduğu Star Medya Grubu bünyesinde bulunan[1] ve 24 Ocak 2007 tarihinde İstanbul merkezli yayın yapmaya başlayan ulusal bir Türk televizyon kanalıdır."
+     },
+	 {
+     "name": "360",
+     "streamURL": "http://46.20.7.97:80/360tv/live/playlist.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/360.png",
+     "desc": "360",
+     "longDesc": "360, Türkmedya Yayın Grubu bünyesinde yayın yapan bir televizyon kanalı."
+     },
+	 {
+     "name": "AKDENİZ TV",
+     "streamURL": "http://77.245.156.180:554/live/akdeniztv1/playlist.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/akdeniztv.png",
+     "desc": "AKDENİZ TV",
+     "longDesc": "Akdeniz TV, Antalya merkezli bir ulusal televizyon kanalıdır."
+     },
+	 {
+     "name": "BEYAZ TV",
+     "streamURL": "http://37.77.2.236:1935/beyaz/beyaz.stream/playlist.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/beyaztv.png",
+     "desc": "BEYAZ TV",
+     "longDesc": "Beyaz TV, 24 Mayıs 2010'da kurulan ulusal televizyon kanalı. Kanal, Ses TV'nin ardılıdır."
+     },
+	 {
+     "name": "BUGÜN TV",
+     "streamURL": "http://origin.live.web.tv.streamprovider.net/streams/8c07e13958b710030ccf40163739f3b8_live_0_0/index.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/buguntv.png",
+     "desc": "BUGÜN TV",
+     "longDesc": "Bugün TV, Koza Holding tarafından kurulan bir haber kanalıdır."
+     },
+	 {
+     "name": "CEM TV",
+     "streamURL": "http://origin.live.web.tv.streamprovider.net/streams/15f95a1f90b255e44b2e39b09148aa5b_live_0_0/index.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/cemtv.png",
+     "desc": "CEM TV",
+     "longDesc": "Cem TV Türkiye'nin ilk Alevi televizyon kanalıdır. Kurucusu Prof. Dr İzzettin Doğan'dır."
+     },
+	 {
+     "name": "CİNE 5",
+     "streamURL": "http://cine5.stream.cubecdn.net/cine5/stream_1.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/cine5.png",
+     "desc": "CİNE 5",
+     "longDesc": "Cine5, 1993 yılında Erol Aksoy tarafından kurulan bir kanaldır. Türkiye'nin ilk ücretli ve şifreli kanalıdır."
+     },
+	 {
+     "name": "CNBC-e",
+     "streamURL": "http://yayin5.canlitv.com:1935/live/cnbce/playlist.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/cnbce.png",
+     "desc": "PİYASA ANALİZİ...",
+     "longDesc": "CNBC-e, Doğuş Yayın Grubu ve NBC Universal ortaklığı altında 16 Ekim 2000'de Türkiye'de yayın yapmak üzere kurulan ekonomi ve dizi kanalı."
+     },
+	 {
+     "name": "DREAM TV",
+     "streamURL": "http://live.netd.com.tr/S1/HLS_LIVE/dreamtv/1000/prog_index.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/dreamtv.png",
+     "desc": "DREAM TV",
+     "longDesc": "Dream TV, Doğan Medya Grubu'nun yabancı ve Türkçe pop-rock müzik kanalı."
+     },
+	 {
+     "name": "FOX TV",
+     "streamURL": "http://bak01-edge03.itdc.ge/foxturk/index.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/fox.png",
+     "desc": "KOCAMIN AİLESİ...",
+     "longDesc": "Fox Broadcasting Company ya da Fox (bazen FOX),[1][2] Fox Entertainment Group'un sahip olduğu Amerikan televizyon kanalı."
+     },
+	 {
+     "name": "HABERTÜRK",
+     "streamURL": "http://live-ciner.mncdn.net/haberturk/haberturk2/playlist.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/haberturk.png",
+     "desc": "EKONOMİDE GÖRÜNÜM...",
+     "longDesc": "Habertürk TV, Ciner Medya Grubu'na ait bir haber kanalı."
+     },
+	 {
+     "name": "KANAL 7 HD",
+     "streamURL": "http://livede.gostream.nl/kanal7hq/kanal7hq/playlist.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/kanal7hd.png",
+     "desc": "DR. FERİDUN KUNAK SHOW...",
+     "longDesc": "Kanal 7, Türkiye'de Yeni Dünya Medya Grubu bünyesinde yayın yapan ulusal televizyon kanalıdır."
+     },
+	 {
+     "name": "KARADENİZ TV",
+     "streamURL": "http://origin.live.web.tv.streamprovider.net/streams/b549125bde3db0bf349b170bc5deb2e6/index.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/karadeniztv.png",
+     "desc": "KARADENİZ TV",
+     "longDesc": "KRT TV, 18 Mayıs 2005 tarihinde Karadeniz TV adıyla yayına başlayan kültürel televizyon kanalıdır."
+     },
+	 {
+     "name": "NTV SPOR",
+     "streamURL": "http://origin.live.web.tv.streamprovider.net/streams/a820629b8abc43c73c76b091086c138a_live_0_0/index.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/ntvspor.png",
+     "desc": "NTV SPOR",
+     "longDesc": "NTV Spor, Doğuş Grubu bünyesindeki spor kanalı. Kanal, 17 Mart 2008 tarihinde yayın hayatına başlamıştır."
+     },
+	 {
+     "name": "POWERTÜRK TV",
+     "streamURL": "http://cdn2.powergroup.com.tr/powertv/_definst_/powerturktv.smil/playlist.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/powerturk.png",
+     "desc": "POWERTÜRK TV",
+     "longDesc": "Powertürk TV, Türkçe pop ve rock tarzı video klip yayınlayan müzik kanalı."
+     },
+	 {
+     "name": "SAMANYOLU TV",
+     "streamURL": "http://vivisolive-lh.akamaihd.net/i/syg_stv_1@382417/master.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/samanyolutv.png",
+     "desc": "FİKİR ATLASI...",
+     "longDesc": "Samanyolu TV, 13 Ocak 1993 tarihinde yayın hayatına başlamıştır. Samanyolu Televizyonu daha çok İslam ve kültürel konuları işlemesi ile bilinir. Kısa adı STV 'dir."
+     },
+	 {
+     "name": "TGRT HABER",
+     "streamURL": "http://origin.live.web.tv.streamprovider.net/streams/b9b5c58f4f1e3a925fa486c558654f6d/index.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/tgrthaber.png",
+     "desc": "TGRT HABER",
+     "longDesc": "TGRT Haber, İhlas Holding bünyesinde bulunan bir haber kanalı."
+     },
+	 {
+     "name": "YABAN TV",
+     "streamURL": "http://origin.live.web.tv.streamprovider.net/streams/b5bcc039336d725a0a4aab44347e5b36_live_0_0/index.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/yabantv.png",
+     "desc": "YABAN TV",
+     "longDesc": "Yaban TV, yaban yaşamı ve doğa sporları yayınlayan bir tematik televizyon kanalı."
+     },
+	 {
+     "name": "KRAL TV",
+     "streamURL": "http://bak01-edge03.itdc.ge/kral/index.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/kraltv.png",
+     "desc": "KRAL TV",
+     "longDesc": "Kral TV, 1994'te yayın hayatına başlayan, Türkiye'nin ilk video müzik kanalıdır."
+     },
+	 {
+     "name": "LALEGÜL TV",
+     "streamURL": "http://origin.live.web.tv.streamprovider.net/streams/0eb471be049b2d20891b46c9ef4df0fc_live_0_0/index.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/lalegultv.png",
+     "desc": "LALEGÜL TV",
+     "longDesc": "Lalegül TV, dinî bir televizyon kanalı."
+     },
+	 {
+     "name": "TAY TV",
+     "streamURL": "http://stream.farm.cdnline.com/liveedge/tjk.stream_512k/playlist.m3u8",
+     "imageURL": "http://83colors.com/FTP/imagestv/taytv.png",
+     "desc": "TAY TV",
+     "longDesc": "T.A.Y. TV, Doğan Holding bünyesinde, Türkiye Jokey Kulübü ile protokol imzalamak suretiyle at yarışlarını sunan kanaldır. "
+     }
+    ]
+}
