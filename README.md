@@ -1,6 +1,6 @@
 #myTV
 
-myTV is an open source tv station app with robust and professional features. This is a fully realized Radio App built entirely in Swift 2.
+myTV is an open source live tv app with robust and professional features. This is a fully realized built entirely in Swift 2.
 
 ![alt text](http://83colors.com/myTV_CAPS.png "myTV")
 
@@ -30,7 +30,7 @@ Give it a quick watch.
 - SwiftyJSON & Spring are included in the repo to get you up & running quickly. It's on the roadmap to utilize CocoaPods in the future. 
 
 ##Credits
-*Created by [Mustafa Sahin](http://83colors.com), Facebook: [@goFecher](http://facebook.com/distinguish)*   
+*Created by [Mustafa Sahin](http://83colors.com), Facebook: [@msahin](http://facebook.com/distinguish)*   
 
 ##Requirements
 
