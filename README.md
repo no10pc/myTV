@@ -1,7 +1,6 @@
 #myTV
 
 myTV is an open source live tv app with robust and professional features.
-This is a fully realized Radio App Created by [Matthew Fecher](http://matthewfecher.com)
 
 ![alt text](http://83colors.com/myTV_CAPS.png "myTV")
 
@@ -31,7 +30,8 @@ Give it a quick watch.
 - SwiftyJSON & Spring are included in the repo to get you up & running quickly. It's on the roadmap to utilize CocoaPods in the future. 
 
 ##Credits
-*Created by [Mustafa Sahin](http://83colors.com), Facebook: [@msahin](http://facebook.com/distinguish)*   
+*Powered by [Mustafa Sahin](http://83colors.com), Facebook: [@msahin](http://facebook.com/distinguish)*
+*Created by [Matthew Fecher](http://matthewfecher.com), Twitter: [@goFecher](http://twitter.com/goFecher)*
 
 ##Requirements
 
