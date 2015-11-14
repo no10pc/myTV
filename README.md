@@ -1,13 +1,8 @@
 #myTV
 
-myTV is an open source live tv app with robust and professional features.
+myTV is an open source live watching TV app with robust and professional features.
 
 ![alt text](http://83colors.com/myTV_CAPS.png "myTV")
-
-##Video
-View this [**GETTING STARTED VIDEO**](https://youtu.be/m7jiajCHFvc).
-It's short & sweet to give you a quick overview.  
-Give it a quick watch.
 
 ##Features
 
@@ -23,8 +18,7 @@ Give it a quick watch.
 
 ##Important Notes
 
-- Volume slider does not work in Simulator, only in device. This appears to be an Xcode issue.
-- Radio stations in demo are for demonstration purposes only. 
+- TV stations in demo are for demonstration purposes only. (for apple store copyright tv channels can be a problem)
 - For a production product, you may want to swap out the MPMoviePlayerController for a more robust streaming library/SDK (with stream stitching, interruption handling, etc).
 - Uses Meng To's [Spring](https://github.com/MengTo/Spring) library for animation, making it easy experiment with different UI/UX animations
 - SwiftyJSON & Spring are included in the repo to get you up & running quickly. It's on the roadmap to utilize CocoaPods in the future. 
@@ -36,11 +30,11 @@ Give it a quick watch.
 ##Requirements
 
 - iOS 8.0+ / Mac OS X 10.9+
-- Xcode 7
+- Xcode 7 / Swift 2.0
 
 ##Setup
 
-The "myTV-Settings.swift" file contains some project settings to get you started. Please enter your own LastFM Key.  
+The "myTV-Settings.swift" file contains some project settings to get you started.  
 Watch this [Getting Started Video](https://youtu.be/) to get up & running quickly.
 
 ##Integration
@@ -51,15 +45,15 @@ Includes full Xcode Project to jumpstart development.
 
 Includes an example "stations.json" file. You may upload the JSON file to a server, so that you can update the stations in the app without resubmitting to the app store. The following fields are supported in the app:
 
-- **name**: The name of the station as you want it displayed (e.g. "Sub Pop Radio")
+- **name**: The name of the station as you want it displayed (e.g. "Sub Live TV")
 
 - **streamURL**: The url of the actual stream
 
-- **imageURL**: Station image url. Station images in demo are 350x206. Image can be local or hosted. Leave out the "http" to use a local image (You can use either: "station-subpop" or "http://myurl.com/images/station-subpop.jpg")
+- **imageURL**: Station image url. Station images in demo are 350x206. Image can be local or hosted. Leave out the "http" to use a local image (You can use either: "station-subpop" or "http://myurl.com/images/station-**TV.jpg")
 
-- **desc**: Short 2 or 3 word description of the station as you want it displayed (e.g. "Outlaw Country")
+- **desc**: Short 2 or 3 word description of the station as you want it displayed (e.g. "Country Turkey")
 
-- **longDesc**: Long description of the station to be used on the "info screen". This is optional.
+- **longDesc**: Long description of the station to be used on the "info program guide". This is optional.
 
 ##Contributions
 
