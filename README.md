@@ -1,6 +1,7 @@
 #myTV
 
-myTV is an open source live tv app with robust and professional features. This is a fully realized built entirely in Swift 2.
+myTV is an open source live tv app with robust and professional features.
+This is a fully realized Radio App Created by [Matthew Fecher](http://matthewfecher.com)
 
 ![alt text](http://83colors.com/myTV_CAPS.png "myTV")
 
