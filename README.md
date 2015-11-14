@@ -1,8 +1,8 @@
-#Swift Radio
+#myTV
 
-Swift Radio is an open source radio station app with robust and professional features. This is a fully realized Radio App built entirely in Swift 2.
+myTV is an open source tv station app with robust and professional features. This is a fully realized Radio App built entirely in Swift 2.
 
-![alt text](http://matthewfecher.com/wp-content/uploads/2015/09/screen-1.jpg "Swift Radio")
+![alt text](http://83colors.com/myTV_CAPS.png "myTV")
 
 ##Video
 View this [**GETTING STARTED VIDEO**](https://youtu.be/m7jiajCHFvc).
@@ -11,14 +11,11 @@ Give it a quick watch.
 
 ##Features
 
-- LastFM API Integration to automatically download Album Art
-- Loads and parses metadata (Track & Artist information)
-- Current Artist & Track displayed on Stations page
-- Displays Artist, Track, & Album Art on Lock Screen
+- Loads and parses metadata (Logo and Channels)
+- Displays TV Program Guide
 - Ability to update playlist from server or locally. (Update stations anytime without resubmitting to app store!)
 - Custom views optimized for iPhone 4s, 5, 6 and 6+ for backwards compatibility
 - Compiles with Xcode 7 & Swift 2.0
-- Background audio performance
 - Supports local or hosted station images
 - "About" page with ability to send email & visit website
 - Uses industry standard SwiftyJSON library for easy JSON manipulation
@@ -33,8 +30,7 @@ Give it a quick watch.
 - SwiftyJSON & Spring are included in the repo to get you up & running quickly. It's on the roadmap to utilize CocoaPods in the future. 
 
 ##Credits
-*Created by [Matthew Fecher](http://matthewfecher.com), Twitter: [@goFecher](http://twitter.com/goFecher)*  
-*Thanks to Basel Farag, from [Denver Swift Heads](http://www.meetup.com/Denver-Swift-Heads/) for the code review.*  
+*Created by [Mustafa Sahin](http://83colors.com), Facebook: [@goFecher](http://facebook.com/distinguish)*   
 
 ##Requirements
 
@@ -43,14 +39,14 @@ Give it a quick watch.
 
 ##Setup
 
-The "SwiftRadio-Settings.swift" file contains some project settings to get you started. Please enter your own LastFM Key.  
-Watch this [Getting Started Video](https://youtu.be/m7jiajCHFvc) to get up & running quickly.
+The "myTV-Settings.swift" file contains some project settings to get you started. Please enter your own LastFM Key.  
+Watch this [Getting Started Video](https://youtu.be/) to get up & running quickly.
 
 ##Integration
 
 Includes full Xcode Project to jumpstart development.
 
-##Stations 
+##Channels
 
 Includes an example "stations.json" file. You may upload the JSON file to a server, so that you can update the stations in the app without resubmitting to the app store. The following fields are supported in the app:
 
@@ -71,5 +67,4 @@ Contributions are very welcome. Please create a separate branch (e.g. features/3
 ##Streaming Libraries
 
 - You can use this Swift code as a front-end for a more robust streaming backend.
-- In addition to the MPMoviePlayer, I've briefly tested it with the following two streaming libraries (and it works rather nicely): [RadioKit](http://stormyprods.com/products/radiokit.php) & [Radio](https://github.com/hamedh/Radio) 
 - If you test it with a library, let me know!
