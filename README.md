@@ -4,6 +4,12 @@ myTV is an open source live watching TV app with robust and professional feature
 
 ![alt text](http://83colors.com/myTV_CAPS.png "myTV")
 
+##Video
+
+View this [**GETTING STARTED VIDEO**](https://youtu.be/m7jiajCHFvc).
+It's short & sweet to give you a quick overview.  
+Give it a quick watch.
+
 ##Features
 
 - Loads and parses metadata (Logo and Channels)
@@ -24,8 +30,10 @@ myTV is an open source live watching TV app with robust and professional feature
 - SwiftyJSON & Spring are included in the repo to get you up & running quickly. It's on the roadmap to utilize CocoaPods in the future. 
 
 ##Credits
-*Powered by [Mustafa Sahin](http://83colors.com), Facebook: [@msahin](http://facebook.com/distinguish)*
+
 *Created by [Matthew Fecher](http://matthewfecher.com), Twitter: [@goFecher](http://twitter.com/goFecher)*
+*[Mustafa Sahin](http://83colors.com), Facebook: [@distinguish](http://facebook.com/distinguish)*
+*Thanks to Basel Farag, from [Denver Swift Heads](http://www.meetup.com/Denver-Swift-Heads/) for the code review.*
 
 ##Requirements
 
@@ -35,7 +43,7 @@ myTV is an open source live watching TV app with robust and professional feature
 ##Setup
 
 The "myTV-Settings.swift" file contains some project settings to get you started.  
-Watch this [Getting Started Video](https://youtu.be/) to get up & running quickly.
+Watch this [Getting Started Video](https://youtu.be/m7jiajCHFvc) to get up & running quickly.
 
 ##Integration
 
