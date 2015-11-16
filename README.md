@@ -21,6 +21,7 @@ Give it a quick watch.
 - "About" page with ability to send email & visit website
 - Uses industry standard SwiftyJSON library for easy JSON manipulation
 - Pull to Refresh Stations
+- UIWebView playing stream using TV Channels
 
 ##Important Notes
 
