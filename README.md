@@ -73,9 +73,9 @@ Contributions are very welcome. Please create a separate branch (e.g. features/3
 - You can use this Swift code as a front-end for a more robust streaming backend.
 - If you test it with a library, let me know!
 - 
-##Get Creative
+##Original Source
 
-- Here's a branch of the code that plays streaming Radio Stations. 
+- Here's a branch of the code that plays streaming Radio Stations.</br>
 *Swift Radio: (https://github.com/swiftcodex/Swift-Radio-Pro)*
 *Created by [Matthew Fecher](http://matthewfecher.com), Twitter: [@goFecher](http://twitter.com/goFecher)*
 ![alt text](http://matthewfecher.com/wp-content/uploads/2015/09/screen-1.jpg "Swift Radio")
