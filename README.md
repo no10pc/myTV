@@ -75,5 +75,7 @@ Contributions are very welcome. Please create a separate branch (e.g. features/3
 - 
 ##Get Creative
 
-- Here's a branch of the code that plays streaming Radio Stations. *Swift Radio: [@goFecher](https://github.com/swiftcodex/Swift-Radio-Pro)* 
+- Here's a branch of the code that plays streaming Radio Stations. 
+*Swift Radio: (https://github.com/swiftcodex/Swift-Radio-Pro)*
 *Created by [Matthew Fecher](http://matthewfecher.com), Twitter: [@goFecher](http://twitter.com/goFecher)*
+https://camo.githubusercontent.com/fc33f681fdd2c034874bf9205a62e913abbe8d50/687474703a2f2f6d6174746865776665636865722e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031352f30392f73637265656e2d312e6a7067
