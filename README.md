@@ -4,7 +4,7 @@ myTV is an open source live watching TV app with robust and professional feature
 
 ![alt text](http://83colors.com/mytv_ss.png "myTV")
 
-##Video
+##Video 
 
 View this [**GETTING STARTED VIDEO**](https://youtu.be/m7jiajCHFvc).
 It's short & sweet to give you a quick overview.  
