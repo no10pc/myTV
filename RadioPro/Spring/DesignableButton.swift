@@ -22,21 +22,47 @@
 
 import UIKit
 
-@IBDesignable public class DesignableLabel: SpringLabel {
+@IBDesignable public class DesignableButton: SpringButton {
 
-    @IBInspectable public var lineHeight: CGFloat = 1.5 {
+    @IBInspectable public var borderColor: UIColor = UIColor.clear {
         didSet {
-            let font = UIFont(name: self.font.fontName, size: self.font.pointSize)
-            let text = self.text
-            
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineSpacing = lineHeight
-            
-            let attributedString = NSMutableAttributedString(string: text!)
-            attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
-            attributedString.addAttribute(NSFontAttributeName, value: font!, range: NSMakeRange(0, attributedString.length))
-            
-            self.attributedText = attributedString
+            layer.borderColor = borderColor.cgColor
+        }
+    }
+    
+    @IBInspectable public var borderWidth: CGFloat = 0 {
+        didSet {
+            layer.borderWidth = borderWidth
+        }
+    }
+    
+    @IBInspectable public var cornerRadius: CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+        }
+    }
+    
+    @IBInspectable public var shadowColor: UIColor = UIColor.clear {
+        didSet {
+            layer.shadowColor = shadowColor.cgColor
+        }
+    }
+    
+    @IBInspectable public var shadowRadius: CGFloat = 0 {
+        didSet {
+            layer.shadowRadius = shadowRadius
+        }
+    }
+    
+    @IBInspectable public var shadowOpacity: CGFloat = 0 {
+        didSet {
+            layer.shadowOpacity = Float(shadowOpacity)
+        }
+    }
+    
+    @IBInspectable public var shadowOffsetY: CGFloat = 0 {
+        didSet {
+            layer.shadowOffset.height = shadowOffsetY
         }
     }
 

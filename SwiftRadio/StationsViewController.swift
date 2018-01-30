@@ -24,15 +24,16 @@ class StationsViewController: UIViewController {
         
         // Register 'Nothing Found' cell xib
         let cellNib = UINib(nibName: "NothingFoundCell", bundle: nil)
-        tableView.registerNib(cellNib, forCellReuseIdentifier: "NothingFound")
+        tableView.register(cellNib, forCellReuseIdentifier: "NothingFound")
         
         // Load Data
         loadStationsFromJSON()
         
         // Setup TableView
-        tableView.backgroundColor = UIColor.clearColor()
+        tableView.backgroundColor = UIColor.clear
         tableView.backgroundView = nil
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        tableView.rowHeight = UITableViewAutomaticDimension;
         
         // Setup Pull to Refresh
         setupPullToRefresh()
@@ -46,7 +47,7 @@ class StationsViewController: UIViewController {
         do {
             try AVAudioSession.sharedInstance().setCategory(
                 AVAudioSessionCategoryPlayAndRecord,
-                withOptions: .DefaultToSpeaker)
+                with: .defaultToSpeaker)
             success = true
         } catch let error1 as NSError {
             error = error1
@@ -57,7 +58,7 @@ class StationsViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.title = "myTV"
         
         // If a station has been selected, create "Now Playing" button to get back to current station
@@ -68,7 +69,7 @@ class StationsViewController: UIViewController {
         // If a track is playing, display title & artist information and animation
         if currentTrack != nil && currentTrack!.isPlaying {
             let title = currentStation!.stationName + ": " + currentTrack!.title + " - " + currentTrack!.artist + "..."
-            stationNowPlayingButton.setTitle(title, forState: .Normal)
+            stationNowPlayingButton.setTitle(title, for: .normal)
             nowPlayingAnimationImageView.startAnimating()
         } else {
             nowPlayingAnimationImageView.stopAnimating()
@@ -84,9 +85,9 @@ class StationsViewController: UIViewController {
     func setupPullToRefresh() {
         self.refreshControl = UIRefreshControl()
         self.refreshControl.attributedTitle = NSAttributedString(string: "Yenilemek için çekin")
-        self.refreshControl.backgroundColor = UIColor.blackColor()
-        self.refreshControl.tintColor = UIColor.whiteColor()
-        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl.backgroundColor = UIColor.black
+        self.refreshControl.tintColor = UIColor.white
+        self.refreshControl.addTarget(self, action: Selector("refresh:"), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshControl)
     }
     
@@ -97,7 +98,7 @@ class StationsViewController: UIViewController {
     
     func createNowPlayingBarButton() {
         if self.navigationItem.rightBarButtonItem == nil {
-            let btn = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action:"nowPlayingBarButtonPressed")
+            let btn = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: self, action:"nowPlayingBarButtonPressed")
             btn.image = UIImage(named: "btn-nowPlaying")
             self.navigationItem.rightBarButtonItem = btn
         }
@@ -108,24 +109,24 @@ class StationsViewController: UIViewController {
     //*****************************************************************
     
     func nowPlayingBarButtonPressed() {
-        performSegueWithIdentifier("NowPlaying", sender: self)
+        performSegue(withIdentifier: "NowPlaying", sender: self)
     }
     
     @IBAction func nowPlayingPressed(sender: UIButton) {
-        performSegueWithIdentifier("NowPlaying", sender: self)
+        performSegue(withIdentifier: "NowPlaying", sender: self)
     }
     
     func refresh(sender: AnyObject) {
         // Pull to Refresh
-        stations.removeAll(keepCapacity: false)
+        stations.removeAll(keepingCapacity: false)
         loadStationsFromJSON()
         
         // Wait 2 seconds then refresh screen
-        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC)));
-        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+
+       
             self.refreshControl.endRefreshing()
             self.view.setNeedsDisplay()
-        }
+        
     }
     
     //*****************************************************************
@@ -134,21 +135,21 @@ class StationsViewController: UIViewController {
     
     func loadStationsFromJSON() {
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         DataManager.getStationDataWithSuccess() { (data) in
             
             if DEBUG_LOG { print("JSON İstasyonlar Yüklendi") }
             
-            let json = JSON(data: data)
+            let json = try? JSON(data: data!)
             
-            if let stationArray = json["station"].array {
+            if let stationArray = json!["station"].array {
                 
                 for stationJSON in stationArray {
-                    let station = RadioStation.parseStation(stationJSON)
+                    let station = RadioStation.parseStation(stationJSON: stationJSON)
                     self.stations.append(station)
                 }
                 
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async() {
                     self.tableView.reloadData()
                     self.view.setNeedsDisplay()
                 }
@@ -156,7 +157,7 @@ class StationsViewController: UIViewController {
                 if DEBUG_LOG { print("JSON İstasyonlar Yüklenemedi!") }
             }
             
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
         }
     }
     
@@ -164,13 +165,13 @@ class StationsViewController: UIViewController {
     // MARK: - Segue
     //*****************************************************************
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NowPlaying" {
             
             self.title = "Geri"
             firstTime = false
             
-            let nowPlayingVC = segue.destinationViewController as! NowPlayingViewController
+            let nowPlayingVC = segue.destination as! NowPlayingViewController
             nowPlayingVC.delegate = self
             
             if let indexPath = (sender as? NSIndexPath) {
@@ -204,14 +205,14 @@ extension StationsViewController: UITableViewDataSource {
     
     // MARK: - Table view data source
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 88
+        return 120
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if stations.count == 0 {
             return 1
         } else {
@@ -219,27 +220,27 @@ extension StationsViewController: UITableViewDataSource {
         }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if stations.isEmpty {
-            let cell = tableView.dequeueReusableCellWithIdentifier("NothingFound", forIndexPath: indexPath) 
-            cell.backgroundColor = UIColor.clearColor()
-            cell.selectionStyle = UITableViewCellSelectionStyle.None
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NothingFound", for: indexPath as IndexPath)
+            cell.backgroundColor = UIColor.clear
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
             return cell
             
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("StationCell", forIndexPath: indexPath) as! StationTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "StationCell", for: indexPath as IndexPath) as! StationTableViewCell
             
             // alternate background color
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = UIColor.clearColor()
+                cell.backgroundColor = UIColor.clear
             } else {
-                cell.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.2)
+                cell.backgroundColor = UIColor.black.withAlphaComponent(0.2)
             }
             
             // Configure the cell...
             let station = stations[indexPath.row]
-            cell.configureStationCell(station)
+            cell.configureStationCell(station: station)
             
             return cell
         }
@@ -252,20 +253,24 @@ extension StationsViewController: UITableViewDataSource {
 
 extension StationsViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("click")
         if !stations.isEmpty {
             
             // Set Now Playing Buttons
-            let title = stations[indexPath.row].stationName + " - Son İzlenen..."
-            stationNowPlayingButton.setTitle(title, forState: .Normal)
-            stationNowPlayingButton.enabled = true
-            
-            performSegueWithIdentifier("NowPlaying", sender: indexPath)
+            let title = stations[indexPath.row].stationName
+
+            stationNowPlayingButton.setTitle(title, for: .normal)
+            stationNowPlayingButton.isEnabled = true
+            self.performSegue(withIdentifier: "NowPlaying", sender: indexPath)
         }
     }
+    
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
+//        
+//        tableView.deselectRow(at: indexPath, animated: true)
+//       
+//    }
 }
 
 //*****************************************************************
@@ -282,7 +287,7 @@ extension StationsViewController: NowPlayingViewControllerDelegate {
     func songMetaDataDidUpdate(track: Track) {
         currentTrack = track
         let title = currentStation!.stationName + ": " + currentTrack!.title + " - " + currentTrack!.artist + "..."
-        stationNowPlayingButton.setTitle(title, forState: .Normal)
+        stationNowPlayingButton.setTitle(title, for: .normal)
     }
 
 }

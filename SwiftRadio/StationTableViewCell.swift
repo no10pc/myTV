@@ -7,7 +7,7 @@ class StationTableViewCell: UITableViewCell {
     @IBOutlet weak var stationDescLabel: UILabel!
     @IBOutlet weak var stationImageView: UIImageView!
     
-    var downloadTask: NSURLSessionDownloadTask?
+    var downloadTask: URLSessionDownloadTask?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,10 +26,10 @@ class StationTableViewCell: UITableViewCell {
         
         let imageURL = station.stationImageURL as NSString
         
-            if imageURL.containsString("http") {
+        if imageURL.contains("http") {
             
-            if let url = NSURL(string: station.stationImageURL) {
-                downloadTask = stationImageView.loadImageWithURL(url) { (image) in
+            if let url = URL(string: station.stationImageURL) {
+                stationImageView.loadImageWithURL(url: url) { (image) in
                     // station image loaded
                 }
             }

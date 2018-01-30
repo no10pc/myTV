@@ -10,7 +10,7 @@ class InfoDetailViewController: UIViewController {
     @IBOutlet weak var okayButton: UIButton!
     
     var currentStation: RadioStation!
-    var downloadTask: NSURLSessionDownloadTask?
+    var downloadTask: URLSessionDownloadTask?
 
     //*****************************************************************
     // MARK: - ViewDidLoad
@@ -57,10 +57,10 @@ class InfoDetailViewController: UIViewController {
         // Display Station Image/Logo
         let imageURL = currentStation.stationImageURL
         
-        if imageURL.rangeOfString("http") != nil {
+        if imageURL.contains("http"){
             // Get station image from the web, iOS should cache the image
-            if let url = NSURL(string: currentStation.stationImageURL) {
-                downloadTask = stationImageView.loadImageWithURL(url) { _ in }
+            if let url = URL(string: currentStation.stationImageURL) {
+                stationImageView.loadImageWithURL(url: url as URL) { _ in }
             }
             
         } else if imageURL != "" {
@@ -81,7 +81,7 @@ class InfoDetailViewController: UIViewController {
     //*****************************************************************
     
     @IBAction func okayButtonPressed(sender: UIButton) {
-        navigationController?.popViewControllerAnimated(true)
+        navigationController?.popViewController(animated: true)
     }
     
 }

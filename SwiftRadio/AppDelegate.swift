@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // MPNowPlayingInfoCenter
-        UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
+        UIApplication.shared.beginReceivingRemoteControlEvents()
         
         return true
     }
@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         
-        UIApplication.sharedApplication().endReceivingRemoteControlEvents()
+        UIApplication.shared.endReceivingRemoteControlEvents()
         
     }
 

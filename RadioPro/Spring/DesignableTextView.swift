@@ -22,49 +22,11 @@
 
 import UIKit
 
-@IBDesignable public class DesignableTextField: SpringTextField {
+@IBDesignable public class DesignableTextView: SpringTextView {
     
-    @IBInspectable public var placeholderColor: UIColor = UIColor.clearColor() {
+    @IBInspectable public var borderColor: UIColor = UIColor.clear {
         didSet {
-            attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSForegroundColorAttributeName: placeholderColor])
-            layoutSubviews()
-            
-        }
-    }
-    
-    @IBInspectable public var sidePadding: CGFloat = 0 {
-        didSet {
-            let padding = UIView(frame: CGRectMake(0, 0, sidePadding, sidePadding))
-            
-            leftViewMode = UITextFieldViewMode.Always
-            leftView = padding
-            
-            rightViewMode = UITextFieldViewMode.Always
-            rightView = padding
-        }
-    }
-    
-    @IBInspectable public var leftPadding: CGFloat = 0 {
-        didSet {
-            let padding = UIView(frame: CGRectMake(0, 0, leftPadding, 0))
-            
-            leftViewMode = UITextFieldViewMode.Always
-            leftView = padding
-        }
-    }
-    
-    @IBInspectable public var rightPadding: CGFloat = 0 {
-        didSet {
-            let padding = UIView(frame: CGRectMake(0, 0, rightPadding, 0))
-            
-            rightViewMode = UITextFieldViewMode.Always
-            rightView = padding
-        }
-    }
-    
-    @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
-        didSet {
-            layer.borderColor = borderColor.CGColor
+            layer.borderColor = borderColor.cgColor
         }
     }
     
@@ -79,21 +41,21 @@ import UIKit
             layer.cornerRadius = cornerRadius
         }
     }
-   
+
     @IBInspectable public var lineHeight: CGFloat = 1.5 {
         didSet {
             let font = UIFont(name: self.font!.fontName, size: self.font!.pointSize)
-            let text = self.text
+            guard let text = self.text else { return }
             
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = lineHeight
-            
-            let attributedString = NSMutableAttributedString(string: text!)
-            attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
-            attributedString.addAttribute(NSFontAttributeName, value: font!, range: NSMakeRange(0, attributedString.length))
+
+            let attributedString = NSMutableAttributedString(string: text)
+            attributedString.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributedString.length))
+            attributedString.addAttribute(NSAttributedStringKey.font, value: font!, range: NSRange(location: 0, length: attributedString.length))
             
             self.attributedText = attributedString
         }
     }
-    
+
 }

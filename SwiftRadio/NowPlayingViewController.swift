@@ -34,7 +34,7 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
     @IBOutlet weak var slider = UISlider()
     
     var currentStation: RadioStation!
-    var downloadTask: NSURLSessionDownloadTask?
+    var downloadTask: URLSessionDownloadTask?
     var iPhone4 = false
     var justBecameActive = false
     var newStation = true
@@ -64,9 +64,9 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
         //*****************************************************************
         tvWebView.delegate = self
         
-        let myURL = NSURL(string: currentStation.stationStreamURL)
-        let myURLRequest:NSURLRequest = NSURLRequest(URL: myURL!)
-        tvWebView.loadRequest(myURLRequest);
+        let myURL = URL(string: currentStation.stationStreamURL)
+        let myURLRequest:URLRequest = URLRequest(url: myURL!)
+        tvWebView.loadRequest(myURLRequest as URLRequest);
         
         tvWebView.scrollView.bounces = false;
         tvWebView.scrollView.showsHorizontalScrollIndicator = false;
@@ -91,15 +91,15 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
         setupPlayer()
         
         // Notification for when app becomes active
-        NSNotificationCenter.defaultCenter().addObserver(self,
+        NotificationCenter.default.addObserver(self,
             selector: "didBecomeActiveNotificationReceived",
-            name:"UIApplicationDidBecomeActiveNotification",
+            name:NSNotification.Name(rawValue: "UIApplicationDidBecomeActiveNotification"),
             object: nil)
         
         // Notification for MediaPlayer metadata updated
-        NSNotificationCenter.defaultCenter().addObserver(self,
+        NotificationCenter.default.addObserver(self,
             selector: Selector("metadataUpdated:"),
-            name:MPMoviePlayerTimedMetadataUpdatedNotification,
+            name:NSNotification.Name.MPMoviePlayerTimedMetadataUpdated,
             object: nil);
         
         // Check for station change
@@ -128,15 +128,7 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
         updateAlbumArtwork()
     }
     
-    deinit {
-        // Be a good citizen
-        NSNotificationCenter.defaultCenter().removeObserver(self,
-            name:"UIApplicationDidBecomeActiveNotification",
-            object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self,
-            name: MPMoviePlayerTimedMetadataUpdatedNotification,
-            object: nil)
-    }
+   
     
     //*****************************************************************
     // MARK: - Setup
@@ -145,28 +137,28 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
     func setupPlayer() {
         radioPlayer.view.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         radioPlayer.view.sizeToFit()
-        radioPlayer.movieSourceType = MPMovieSourceType.Streaming
-        radioPlayer.fullscreen = true
+        radioPlayer.movieSourceType = MPMovieSourceType.streaming
+        radioPlayer.isFullscreen = true
         radioPlayer.shouldAutoplay = true
         radioPlayer.prepareToPlay()
-        radioPlayer.controlStyle = MPMovieControlStyle.None
+        radioPlayer.controlStyle = MPMovieControlStyle.none
     }
     
     func setupVolumeSlider() {
         // Note: This slider implementation uses a MPVolumeView
         // The volume slider only works in devices, not the simulator.
         
-        volumeParentView.backgroundColor = UIColor.clearColor()
+        volumeParentView.backgroundColor = UIColor.clear
         let volumeView = MPVolumeView(frame: volumeParentView.bounds)
         for view in volumeView.subviews {
             let uiview: UIView = view as UIView
-            if (uiview.description as NSString).rangeOfString("MPVolumeSlider").location != NSNotFound {
+            if (uiview.description as NSString).range(of: "MPVolumeSlider").location != NSNotFound {
                 mpVolumeSlider = (uiview as! UISlider)
             }
         }
         
         let thumbImageNormal = UIImage(named: "slider-ball")
-        slider?.setThumbImage(thumbImageNormal, forState: .Normal)
+        slider?.setThumbImage(thumbImageNormal, for: .normal)
         
     }
     
@@ -177,7 +169,7 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
         //radioPlayer.prepareToPlay()
         radioPlayer.play()
         
-        updateLabels("Kanallar Yükleniyor...")
+        updateLabels(statusMessage: "Kanallar Yükleniyor...")
         
         // songLabel animate
         songLabel.animation = "flash"
@@ -195,7 +187,7 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
     
     @IBAction func playPressed() {
         track.isPlaying = true
-        playButtonEnable(false)
+        playButtonEnable(enabled: false)
         radioPlayer.play()
         updateLabels()
         
@@ -213,7 +205,7 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
         playButtonEnable()
         
         radioPlayer.pause()
-        updateLabels("Kanal Durduruldu...")
+        updateLabels(statusMessage: "Kanal Durduruldu...")
         nowPlayingImageView.stopAnimating()
     }
     
@@ -260,21 +252,21 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
         
         // Hide station description when album art is displayed or on iPhone 4
         if track.artworkLoaded || iPhone4 {
-            stationDescLabel.hidden = true
+            stationDescLabel.isHidden = true
         } else {
-            stationDescLabel.hidden = false
+            stationDescLabel.isHidden = false
             stationDescLabel.text = currentStation.stationDesc
         }
     }
     
     func playButtonEnable(enabled: Bool = true) {
         if enabled {
-            playButton.enabled = true
-            pauseButton.enabled = false
+            playButton.isEnabled = true
+            pauseButton.isEnabled = false
             track.isPlaying = false
         } else {
-            playButton.enabled = false
-            pauseButton.enabled = true
+            playButton.isEnabled = false
+            pauseButton.isEnabled = true
             track.isPlaying = true
         }
     }
@@ -283,16 +275,16 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
         
         // Setup ImageView
         nowPlayingImageView = UIImageView(image: UIImage(named: "NowPlayingBars-3"))
-        nowPlayingImageView.autoresizingMask = UIViewAutoresizing.None
-        nowPlayingImageView.contentMode = UIViewContentMode.Center
+
+        nowPlayingImageView.contentMode = UIViewContentMode.center
         
         // Create Animation
         nowPlayingImageView.animationImages = AnimationFrames.createFrames()
         nowPlayingImageView.animationDuration = 0.7
         
         // Create Top BarButton
-        let barButton = UIButton(type: UIButtonType.Custom)
-        barButton.frame = CGRectMake(0, 0, 40, 40);
+        let barButton = UIButton(type: UIButtonType.custom)
+        barButton.frame = CGRect(x:0, y:0, width:40, height:40);
         barButton.addSubview(nowPlayingImageView)
         nowPlayingImageView.center = barButton.center
         
@@ -313,22 +305,22 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
         track.artworkLoaded = false
         track.artworkURL = currentStation.stationImageURL
         updateAlbumArtwork()
-        stationDescLabel.hidden = false
+        stationDescLabel.isHidden = false
     }
     
     func updateAlbumArtwork() {
         
-        if track.artworkURL.rangeOfString("http") != nil {
+        if track.artworkURL.contains("http") {
             
             // Hide station description
-            dispatch_async(dispatch_get_main_queue()) {
-                self.stationDescLabel.hidden = false
+            DispatchQueue.main.async() {
+                self.stationDescLabel.isHidden = false
             }
             
             // Attempt to download album art from LastFM
-            if let url = NSURL(string: track.artworkURL) {
+            if let url = URL(string: track.artworkURL) {
                 
-                self.downloadTask = self.albumImageView.loadImageWithURL(url) {
+                self.albumImageView.loadImageWithURL(url: url) {
                     (image) in
                     
                     // Update track struct
@@ -336,7 +328,7 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
                     self.track.artworkLoaded = true
                     
                     // Turn off network activity indicator
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     
                     // Animate artwork
                     self.albumImageView.animation = "wobble"
@@ -344,13 +336,13 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
                     self.albumImageView.animate()
                     
                     // Call delegate function that artwork updated
-                    self.delegate?.artworkDidUpdate(self.track)
+                    self.delegate?.artworkDidUpdate(track: self.track)
                 }
             }
             
             // Hide the station description to make room for album art
             if track.artworkLoaded && !self.justBecameActive {
-                self.stationDescLabel.hidden = true
+                self.stationDescLabel.isHidden = true
                 self.justBecameActive = false
             }
             
@@ -361,7 +353,7 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
             track.artworkLoaded = true
             
             // Call delegate function that artwork updated
-            self.delegate?.artworkDidUpdate(self.track)
+            self.delegate?.artworkDidUpdate(track: track)
             
         } else {
             // No Station or LastFM art found, use default art
@@ -377,37 +369,29 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
     
     func queryAlbumArt() {
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         // Construct LastFM API Call URL
-        let queryURL = String(format: "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=%@&artist=%@&track=%@&format=json", apiKey, track.artist, track.title)
+        let queryURL = URL(string: String(format: "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=%@&artist=%@&track=%@&format=json", apiKey, track.artist, track.title))
         
-        let escapedURL = queryURL.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
         
         // Query API
-        DataManager.getTrackDataWithSuccess(escapedURL!) { (data) in
-            
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-            
-            if DEBUG_LOG {
-                print("LAST FM API SUCCESSFUL RETURN")
-                print("url: \(escapedURL!)")
-            }
-            
-            let json = JSON(data: data)
+        DataManager.loadDataFromURL(url: queryURL!, completion: { (data, error) in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            let json = try? JSON(data: data!)
             
             // Get Largest Sized Image
-            if let imageArray = json["track"]["album"]["image"].array {
+            if let imageArray = json!["track"]["album"]["image"].array {
                 
                 let arrayCount = imageArray.count
                 let lastImage = imageArray[arrayCount - 1]
                 
                 if let artURL = lastImage["#text"].string {
                     
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = true
                     
                     // Check for Default Last FM Image
-                    if artURL.rangeOfString("/noimage/") != nil {
+                    if artURL.contains("/noimage/") != nil {
                         self.resetAlbumArtwork()
                         
                     } else {
@@ -422,23 +406,25 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
             } else {
                 self.resetAlbumArtwork()
             }
-        }
+
+        })
+  
     }
     
     //*****************************************************************
     // MARK: - Segue
     //*****************************************************************
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "InfoDetail" {
-            let infoController = segue.destinationViewController as! InfoDetailViewController
+            let infoController = segue.destination as! InfoDetailViewController
             infoController.currentStation = currentStation
         }
     }
     
     @IBAction func infoButtonPressed(sender: UIButton) {
-        performSegueWithIdentifier("InfoDetail", sender: self)
+        performSegue(withIdentifier: "InfoDetail", sender: self)
     }
     
     
@@ -456,10 +442,10 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
             let metaData = firstMeta.value as! String
             
             var stringParts = [String]()
-            if metaData.rangeOfString(" - ") != nil {
-                stringParts = metaData.componentsSeparatedByString(" - ")
+            if metaData.contains(" - ") != nil {
+                stringParts.append(metaData)
             } else {
-                stringParts = metaData.componentsSeparatedByString("-")
+                stringParts.append(metaData)
             }
             
             // Set artist & songvariables
@@ -476,7 +462,7 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
                 track.title = currentStation.stationName
             }
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async() {
                 
                 if currentSongName != self.track.title {
                     
@@ -495,7 +481,7 @@ class NowPlayingViewController: UIViewController,UIWebViewDelegate {
                     self.songLabel.animate()
                     
                     // Update Stations Screen
-                    self.delegate?.songMetaDataDidUpdate(self.track)
+                    self.delegate?.songMetaDataDidUpdate(track: self.track)
                     
                     // Query LastFM API for album art
                     self.resetAlbumArtwork()

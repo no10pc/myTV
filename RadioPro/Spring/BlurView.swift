@@ -22,24 +22,12 @@
 
 import UIKit
 
-@IBDesignable public class DesignableImageView: SpringImageView {
+public func insertBlurView (view: UIView, style: UIBlurEffectStyle) -> UIVisualEffectView {
+    view.backgroundColor = UIColor.clear
     
-    @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
-        didSet {
-            layer.borderColor = borderColor.CGColor
-        }
-    }
-    
-    @IBInspectable public var borderWidth: CGFloat = 0 {
-        didSet {
-            layer.borderWidth = borderWidth
-        }
-    }
-    
-    @IBInspectable public var cornerRadius: CGFloat = 0 {
-        didSet {
-            layer.cornerRadius = cornerRadius
-        }
-    }
-
+    let blurEffect = UIBlurEffect(style: style)
+    let blurEffectView = UIVisualEffectView(effect: blurEffect)
+    blurEffectView.frame = view.bounds
+    view.insertSubview(blurEffectView, at: 0)
+    return blurEffectView
 }

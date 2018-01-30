@@ -23,10 +23,10 @@ class AboutViewController: UIViewController {
         let subject = "myTV"
         let messageBody = ""
         
-        let configuredMailComposeViewController = configureMailComposeViewController(receipients, subject: subject, messageBody: messageBody)
+        let configuredMailComposeViewController = configureMailComposeViewController(recepients: receipients, subject: subject, messageBody: messageBody)
         
         if canSendMail() {
-            self.presentViewController(configuredMailComposeViewController, animated: true, completion: nil)
+            self.present(configuredMailComposeViewController, animated: true, completion: nil)
         } else {
             showSendMailErrorAlert()
         }
@@ -36,7 +36,7 @@ class AboutViewController: UIViewController {
         
         // Use your own website here
         if let url = NSURL(string: "http://83colors.com") {
-            UIApplication.sharedApplication().openURL(url)
+            UIApplication.shared.openURL(url as URL)
         }
     }
 
@@ -49,7 +49,7 @@ class AboutViewController: UIViewController {
 extension AboutViewController: MFMailComposeViewControllerDelegate {
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+        controller.dismiss(animated: true, completion: nil)
     }
     
     func canSendMail() -> Bool {

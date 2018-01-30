@@ -8,7 +8,7 @@ class PopUpMenuViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        modalPresentationStyle = .Custom
+        modalPresentationStyle = .custom
     }
     
     //*****************************************************************
@@ -22,11 +22,11 @@ class PopUpMenuViewController: UIViewController {
         popupView.layer.cornerRadius = 10
         
         // Set background color to clear
-        view.backgroundColor = UIColor.clearColor()
+        view.backgroundColor = UIColor.clear
         
         // Add gesture recognizer to dismiss view when touched
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("closeButtonPressed"))
-        backgroundView.userInteractionEnabled = true
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(closeButtonPressed))
+        backgroundView.isUserInteractionEnabled = true
         backgroundView.addGestureRecognizer(gestureRecognizer)
     }
     
@@ -34,14 +34,14 @@ class PopUpMenuViewController: UIViewController {
     // MARK: - IBActions
     //*****************************************************************
 
-    @IBAction func closeButtonPressed() {
-        dismissViewControllerAnimated(true, completion: nil)
+    @objc func closeButtonPressed() {
+        dismiss(animated: true, completion: nil)
     }
    
-    @IBAction func websiteButtonPressed(sender: UIButton) {
+    @objc func websiteButtonPressed(sender: UIButton) {
         // Use your own website URL here
-        if let url = NSURL(string: "http://83colors.com/") {
-            UIApplication.sharedApplication().openURL(url)
+        if let url = URL(string: "http://83colors.com/") {
+            UIApplication.shared.openURL(url)
         }
     }
     
